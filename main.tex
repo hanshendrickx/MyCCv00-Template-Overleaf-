@@ -1,0 +1,117 @@
+% Main LaTeX file for book template
+\documentclass[12pt,a4paper,twoside,openright]{book}
+
+% ===== Packages =====
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage[style=authoryear,backend=biber]{biblatex}
+
+% ===== Bibliography =====
+\addbibresource{references.bib}
+
+% ===== Hyperref Setup =====
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=green,
+    pdftitle={Book Title},
+    pdfauthor={Author Name},
+}
+
+% ===== Page Style =====
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ===== Theorem Environments =====
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+
+% ===== Document Information =====
+\title{Your Book Title Here}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+% ===== Front Matter =====
+\frontmatter
+
+% Title Page
+\maketitle
+
+% Dedication (optional)
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\textit{Dedicated to...}
+\end{center}
+\vspace*{\fill}
+
+% Abstract
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This is the abstract of your book. Provide a brief summary of the content, main themes, and objectives of your work.
+
+% Table of Contents
+\tableofcontents
+
+% List of Figures (optional)
+% \listoffigures
+
+% List of Tables (optional)
+% \listoftables
+
+% Preface (optional)
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+This is the preface of your book. You can discuss the motivation, background, and acknowledgments here.
+
+% ===== Main Matter =====
+\mainmatter
+
+% Chapters
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+
+% ===== Back Matter =====
+\backmatter
+
+% Bibliography
+\printbibliography[heading=bibintoc,title={References}]
+
+% Appendix (optional)
+\appendix
+\include{chapters/appendix}
+
+% Index (optional)
+% \printindex
+
+\end{document}
