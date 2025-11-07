@@ -1,0 +1,7 @@
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bibliography1.bib}
+
+\begin{refsection}
+% Chapter content
+\printbibliography
+\end{refsection}

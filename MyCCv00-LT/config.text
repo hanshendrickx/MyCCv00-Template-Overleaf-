@@ -1,0 +1,6 @@
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[english,dutch]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup{font=it, size=small}
+\usepackage[backend=biber]{biblatex}
